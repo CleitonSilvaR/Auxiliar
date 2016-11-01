@@ -40,14 +40,14 @@ public class Auxiliar {
 //            System.out.println("Valor   -> " + list1.get(i).getValues());
 //        }
 //        System.out.println("+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_");
-//        System.out.println(list1.size());
+        System.out.println(list1.size());
 
-//        for (int i = 0; i < list1.size(); i++) {
-//            System.out.println("+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_");
-//            for (int j = 0; j < list2.size(); j++) {
-//                System.out.println(" ->>> "+ similarity(list1.get(i).getContent(), list2.get(j).getContent()));
-//            }
-//        }
+        for (int i = 0; i < list1.size(); i++) {
+            System.out.println("+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_");
+            for (int j = 0; j < list2.size(); j++) {
+                System.out.println(" ->>> "+ similarity(list1.get(i).getContent(), list2.get(j).getContent()));
+            }
+        }
     }
     
 }

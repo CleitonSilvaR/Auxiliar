@@ -35,7 +35,7 @@ public class KNN <A> {
 		for (int i = 0; i < k; i++) {
 			nearestNeighbors.add( orderedList.get(i) );
 		}
-		
+                
 		return nearestNeighbors;
 	}
 

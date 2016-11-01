@@ -29,7 +29,7 @@ public class SimilarityText {
 //            System.out.println("+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_");
             for (int j = 0; j < list2.size(); j++) {
                 if (i == j) {
-                    matriz[i][j] = 0;
+                    matriz[i][j] = 1.0;
                 } else {
                     //                System.out.println(" ->>> "+ similarity(list1.get(i).getContent(), list2.get(j).getContent()));
 //                matriz[i][j] = similarity(list1.get(i).getContent(), list2.get(j).getContent());
@@ -41,25 +41,31 @@ public class SimilarityText {
         }
 
         for (int i = 0; i < list1.size(); i++) {
-            System.out.println("+_+_+_+_+_+_+_+_+_+_+_");
+            //System.out.println("+_+_+_+_+_+_+_+_+_+_+_");
             for (int j = 0; j < list2.size(); j++) {
                 //                System.out.println(" ->>> "+ similarity(list1.get(i).getContent(), list2.get(j).getContent()));
 //                matriz[i][j] = similarity(list1.get(i).getContent(), list2.get(j).getContent());
-                System.out.println(String.format("| %1$02d I - J %2$02d = %3$.3f|", i, j, matriz[i][j]));
+                System.out.print(String.format("| Study X %1$02d distance levenshtein Study all %2$02d = %3$.5f| ", i, j, matriz[i][j]));
 
             }
+            System.out.println("");
         }
-        System.out.println("+_+_+_+_+_+_+_+_+_+_+_");
+        //System.out.println("+_+_+_+_+_+_+_+_+_+_+_");
         return matriz;
     }
 
     public static double similarity(Study s1, Study s2) {
 //        String longer = validateTxt(s1.getContent()), shorter = validateTxt(s2.getContent());
-        String longer = s1.getContent(), shorter = s2.getContent();
-        if (s1.getContent().length() < s2.getContent().length()) {
-            longer = s2.getContent();
-            shorter = s1.getContent();
-        }
+        String longer = s1.getTitle() + " " + s1.getContent(), shorter = s2.getTitle()+ " " + s2.getContent();
+        if(longer.equals(shorter)){
+            return 0;
+        }else if ((longer != null) && (shorter != null)) {
+            if (longer.length() < shorter.length()) {
+                longer = s2.getContent();
+                shorter = s1.getContent();
+            }
+            
+        }else System.out.println("ta nullo");
         int longerLength = longer.length();
         if (longerLength == 0) {
             return 1.0;
@@ -172,5 +178,4 @@ public class SimilarityText {
 ////        printSimilarity(lista1.get(1).toString(), lista2.get(3).toString());
 ////        printSimilarity(lista1.get(1).toString(), lista2.get(4).toString());
 //    }
-
 }

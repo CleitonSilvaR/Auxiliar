@@ -109,10 +109,19 @@ class SimilarityText {
 
     public static void printSimilarity(String s, String t) {
         System.out.println(String.format(
-                "%.3f is the similarity between \"%s\" and \"%s\"", similarity(s, t), s, t));
+                "%.3f : é a distância entre | \"%s\" | e | \"%s\"", similarity(s, t), s, t));
     }
 
-//    public static void main(String[] args) {
+    public static void main(String[] args) {
+        printSimilarity("1234567890", "1");
+        printSimilarity("1234567890", "123");
+        printSimilarity("1234567890", "1234567");
+        printSimilarity("1234567890", "1234567890");
+        printSimilarity("1234567890", "1234567980");
+        printSimilarity("A raposa rápida saltou o muro", "A rápida raposa saltou a cerca");
+        printSimilarity("Está casa é minha", "A casa é azul");
+        printSimilarity("Arranhei meu carro", "Podemos ir viajar de carro");
+        
 //        List lista1 = Arrays.asList("ola eu estou aqui", "oi", "aaa", "bbb", "ccc", "eee");
 //        List lista2 = Arrays.asList("eu quero bolo", "house", "aba", "aab", "ddd", "eee");
 //        String aux = "Ol@, a casa é azul! ? ";
@@ -159,16 +168,16 @@ class SimilarityText {
 //        System.out.println("incluido5 + excluido3");
 //        System.out.println("--> " + similarity(txt5, txt3));
 //
-////        printSimilarity(lista1.get(0).toString(), lista2.get(0).toString());
-////        printSimilarity(lista1.get(1).toString(), lista2.get(1).toString());
-////        printSimilarity(lista1.get(2).toString(), lista2.get(2).toString());
-////        printSimilarity(lista1.get(4).toString(), lista2.get(4).toString());
-////        System.out.println("+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_");
-////        printSimilarity(lista1.get(0).toString(), lista2.get(0).toString());
-////        printSimilarity(lista1.get(1).toString(), lista2.get(1).toString());
-////        printSimilarity(lista1.get(1).toString(), lista2.get(2).toString());
-////        printSimilarity(lista1.get(1).toString(), lista2.get(3).toString());
-////        printSimilarity(lista1.get(1).toString(), lista2.get(4).toString());
-//    }
+//        printSimilarity(lista1.get(0).toString(), lista2.get(0).toString());
+//        printSimilarity(lista1.get(1).toString(), lista2.get(1).toString());
+//        printSimilarity(lista1.get(2).toString(), lista2.get(2).toString());
+//        printSimilarity(lista1.get(4).toString(), lista2.get(4).toString());
+//        System.out.println("+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_");
+//        printSimilarity(lista1.get(0).toString(), lista2.get(0).toString());
+//        printSimilarity(lista1.get(1).toString(), lista2.get(1).toString());
+//        printSimilarity(lista1.get(1).toString(), lista2.get(2).toString());
+//        printSimilarity(lista1.get(1).toString(), lista2.get(3).toString());
+//        printSimilarity(lista1.get(1).toString(), lista2.get(4).toString());
+    }
 
 }
